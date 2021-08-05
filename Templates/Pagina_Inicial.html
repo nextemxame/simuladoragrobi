@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Deploy </title>
+</head>
+<body>
+    
+    <h3> Simluador </h3>
+
+    <form class="contact-form" method="POST" id="Resultado">
+
+        {% csrf_token %}
+        <div class="row mb-4 mt-3">
+
+            <div class="col-md-6">
+                <div class="form-group has-default">
+                    <input type="text" class="form-control" placeholder="Nome (Opcional)">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group has-default">
+                    <input name="Idade" type="number" class="form-control" placeholder="Idade" min=18 max=120>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="row mb-4">
+
+            <div class="col-md-6">
+                <div class="form-group has-default">
+                    <input name="Renda" type="number" class="form-control" placeholder="Renda Financeira" min=0>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group has-default">
+                    <select name="TipoRenda" id="cars" class="form-control" placeholder="Tipo Renda">
+                        <option selected="true" disabled="disabled"> Tipo Renda </option>  
+                        <option value="1"> Assalariado </option>
+                        <option value="2"> Autônomo </option>
+                        <option value="3"> Empresário </option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="row mb-4">
+
+            <div class="col-md-6">
+                <div class="form-group has-default">
+                    <input name="Score" type="number" class="form-control" placeholder="Score Serasa" min=0 max=1000>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group has-default">
+                    <select name="Restricao" id="Restricao" class="form-control" placeholder="Restrição Financeira">
+                        <option selected="true" disabled="disabled"> Restricao Financeira </option>  
+                        <option value=1> Não </option>
+                        <option value=0> Sim </option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-4 ml-auto mr-auto text-center">
+                <button class="btn btn-primary btn-raised">
+                    Simular
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+    <h3> <b> Limite do Cliente:</b> {{ Limite }}  </h3>
+    
+
+
+</body>
+</html>
